@@ -9,6 +9,10 @@ public class VendingMachineApp {
 	*  DO NOT PUT ANY NEW CODE HERE WITHOUT CHECKING WITH YOUR INSTRUCTOR FIRST!
 	***************************************************************************************************************************/
 		
+	
+	// MY FIRST UPDATE -Billy
+	
+	
 		public static void main(String[] args) {
 			Menu appMenu = new Menu(System.in, System.out);                // Instantiate a menu for Vending Machine CLI main program to use
 			VendingMachineCLI vendingCli = new VendingMachineCLI(appMenu); // Instantiate the Vending Machine CLI main program passing it the Menu object to use
