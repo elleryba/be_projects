@@ -1,4 +1,6 @@
 package com.techelevator;
+import java.io.FileNotFoundException;
+
 /**************************************************************************************************************************
 *  This is your Vending Machine Command Line Interface (CLI) class
 *
@@ -23,11 +25,13 @@ public class VendingMachineCLI {
 													    MAIN_MENU_OPTION_PURCHASE,
 													    MAIN_MENU_OPTION_EXIT
 													    };
+	private VendingMachine beMachine;
 	
 	private Menu vendingMenu;              // Menu object to be used by an instance of this class
 	
 	public VendingMachineCLI(Menu menu) {  // Constructor - user will pas a menu for this class to use
 		this.vendingMenu = menu;           // Make the Menu the user object passed, our Menu
+		this.beMachine = new VendingMachine();
 	}
 	/**************************************************************************************************************************
 	*  VendingMachineCLI main processing loop
@@ -44,10 +48,18 @@ public class VendingMachineCLI {
 	***************************************************************************************************************************/
 
 	public void run() {
+		
+		try {
+			beMachine.printBanner();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();;
+		}
 
 		boolean shouldProcess = true;         // Loop control variable
 		
 		while(shouldProcess) {                // Loop until user indicates they want to exit
+			
 			
 			String choice = (String)vendingMenu.getChoiceFromOptions(MAIN_MENU_OPTIONS);  // Display menu and get choice
 			
